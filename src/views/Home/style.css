@@ -1,0 +1,181 @@
+/* Container styles */
+.steel-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.steel-item {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.steel-item:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.steel-name {
+  text-align: left;
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.temperature-info {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.image-scroll-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.steel-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.scroll-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #0056b3;
+}
+
+.scroll-button.left {
+  left: 10px;
+  display: none; /* Hide by default */
+}
+
+.scroll-button.right {
+  right: 10px;
+  display: none; /* Hide by default */
+}
+
+/* Show buttons when they should be visible */
+.image-scroll-container .scroll-button.left {
+  display: block;
+}
+
+.image-scroll-container .scroll-button.right {
+  display: block;
+}
+
+.steel-description-container {
+  text-align: left;
+}
+
+.steel-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  max-height: 60px; /* Height when collapsed */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.steel-description.expanded {
+  max-height: none; /* Remove height limit when expanded */
+}
+
+.toggle-description {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-description:hover {
+  background-color: #0056b3;
+}
+
+/* Hide scrollbar */
+.image-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .steel-item {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .steel-image {
+    max-width: 150px;
+  }
+
+  .scroll-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .scroll-button:hover {
+    background-color: #004080;
+  }
+}
+
+@media (max-width: 480px) {
+  .steel-name {
+    font-size: 20px;
+  }
+
+  .temperature-info {
+    font-size: 12px;
+  }
+
+  .steel-description {
+    font-size: 14px;
+  }
+
+  .steel-image {
+    max-width: 120px;
+  }
+
+  .scroll-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
